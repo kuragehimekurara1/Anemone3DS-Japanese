@@ -200,7 +200,7 @@ static void update_ui(void *arg)
         C2D_DrawImageAt((C2D_Image){ &tex, &subt3x }, 0.0f, 0.0f, 0.4f, NULL, 1.0f, 1.0f);
 
         set_screen(bottom);
-        draw_text_center(GFX_BOTTOM, 4, 0.5, 0.5, 0.5, colors[COLOR_WHITE], "Press \uE005 To Quit");
+        draw_text_center(GFX_BOTTOM, 4, 0.5, 0.5, 0.5, colors[COLOR_WHITE], "\uE005を押して終了します");
         end_frame();
     }
 
@@ -396,18 +396,18 @@ bool init_qr(void)
                 }
                 else
                 {
-                    throw_error("Zip downloaded is neither\na splash nor a theme.", ERROR_LEVEL_WARNING);
+                    throw_error("ダウンロードされたzipは\nスプラッシュでもテーマでもありません。", ERROR_LEVEL_WARNING);
                 }
             }
             else
             {
-                throw_error("File downloaded isn't a zip.", ERROR_LEVEL_WARNING);
+                throw_error("ダウンロードしたファイルはzipファイルではありません。", ERROR_LEVEL_WARNING);
             }
             free(zip_buf);
         }
         else
         {
-            throw_error("Download failed.", ERROR_LEVEL_WARNING);
+            throw_error("ダウンロードに失敗しました。", ERROR_LEVEL_WARNING);
         }
 
         free(filename);
